@@ -2,12 +2,12 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "1. What is the formula used to calculate titratable acidity?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "(V × W × 0.1)/N",
+        "b": "(0.9 × V × N)/W",
+        "c": "(0.1 × V × N)/W",
+        "d": "(V × N × W)/0.9"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
@@ -15,16 +15,67 @@
         "c": "Explanation 2",
         "d": "Explanation 2"
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "2. If 10 ml of milk required 2 ml of 0.1 N NaOH, what is the titratable acidity?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "0.09%",
+        "b": "0.18%",
+        "c": "0.27%",
+        "d": "0.45%"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. What does the appearance of a faint pink color signify in this experiment?",
+      "answers": {
+        "a": "Milk is spoiled",
+        "b": "End point of titration",
+        "c": "Start of reaction",
+        "d": "Indicator is exhausted"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. Which factor does NOT influence titratable acidity in milk?",
+      "answers": {
+        "a": "Heat treatment",
+        "b": "Milk dilution",
+        "c": "Fat content",
+        "d": "Volume of phenolphthalein used"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "5. Why is titratable acidity preferred over pH for assessing milk quality?",
+      "answers": {
+        "a": "It is cheaper",
+        "b": "It measures actual acidity",
+        "c": "It reflects buffering and microbial activity",
+        "d": "It is less time-consuming"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
