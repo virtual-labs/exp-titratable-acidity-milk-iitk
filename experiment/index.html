@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial- scale=1.0" />
+  <title>Titratable Acidity of the Milk</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="overflow-hidden bg-slate-950 step-0">
+  <!-- Header / Navigation (Visuals changed per step) -->
+  <div id="header-bar"
+    class="bg-gradient-to-r from-indigo-500 to-cyan-500 flex items-center shadow-md px-2 gap-3 relative transition-all duration-300">
+    <div class="flex items-center gap-2">
+      <h3 class="text-xl font-bold p-2 text-white">Instructions :</h3>
+      <h3 class="text-lg text-white" id="instruction-text">Make yourself familiar with the instruments & glassware</h3>
+    </div>
+
+    <!-- Timer Section: visible only in certain steps if needed, or we keep it hidden as requested for page 2 -->
+    <div id="timer-container"
+      class="absolute top-1 left-1/2 -translate-x-1/2 flex items-center gap-2 text-white font-semibold bg-indigo-600/40 rounded-lg px-2 py-1 opacity-0">
+      <!-- Hidden by default now, will show if logic requires it, but user asked to remove timer in Page 2 -->
+      <span>Timer:</span>
+      <span id="timer-display" class="tabular-nums">00:00.00</span>
+    </div>
+    <span id="stop-banner"
+      class="hidden absolute top-1 right-80 bg-red-600/90 text-white text-xs px-2 py-1 rounded uppercase tracking-wide">STOP</span>
+  </div>
+
+  <!-- Main Simulation Area -->
+  <div id="simulation-area" class="simulation relative w-full h-screen overflow-hidden max-h-screen">
+
+    <img id="bg" src="assets/bgImageNewW.png" alt="Background"
+      class="absolute inset-0 w-full h-full object-cover z-0" />
+
+    <!-- Page 1: Intro Objects (Everything visible initially via CSS) -->
+    <!-- We will use classes on #simulation-area or body to control visibility -->
+
+    <!-- Burette Assembly -->
+    <div id="burette-group" class="group-burette absolute top-[25%] left-[5%] z-10 transition-opacity duration-300">
+      <img id="empty-Burette" src="assets/empty-Burette-50ml.png" alt="Burette" class="h-[70vh] hover-item"
+        data-label="Burette" />
+      <div id="burette-fill-container" class="absolute top-0 left-[43.2%] w-[1.3vw] h-[35vh] overflow-hidden">
+        <img id="burette-sol" src="assets/Burette-solution.png" alt="Burette Solution"
+          class="w-full h-full absolute bottom-0 clip-hidden z-10" />
+      </div>
+      <img id="funnel" src="assets/funnel.png" alt="Funnel"
+        class="h-[20vh] absolute top-20 left-[46%] -translate-x-1/2 -translate-y-full hover-item" data-label="Funnel" />
+      <img id="burette-nob" src="assets/Burette-nob.png" alt="Burette Knob"
+        class="absolute top-[52.4%] left-[51.5%] h-[6.5vh] cursor-pointer hover-item" data-label="Burette Knob" />
+      <img id="burette-drop" src="assets/drop2.png" alt="Burette Drop"
+        class="absolute top-[64%] left-[44.7%] h-[1.5vh] hidden hover-item" data-label="Burette Drop" />
+    </div>
+
+    <!-- Flask Group -->
+    <div id="flask" class="absolute bottom-[15%] left-[35%] z-10 hover-item group-flask transition-all duration-500"
+      data-label="Flask">
+      <img id="empty-flask" src="assets/empty-flask.png" alt="Empty Flask" class="h-[28vh] hover-item"
+        data-label="Empty Flask" />
+      <img id="filled-flask" src="assets/Flask-Milk.png" alt="Filled Flask"
+        class="w-[23vw] absolute -bottom-[24%] left-0 opacity-0 hover-item transition-all duration-1000"
+        data-label="Milk in Flask" />
+      <img id="titrated-flask" src="assets/conical-flask - titrated.png" alt="Titrated Flask"
+        class="h-[28vh] absolute inset-0 opacity-0 hover-item transition-opacity duration-1000 pointer-events-none"
+        data-label="Titrated Solution" />
+    </div>
+
+    <!-- Pipette Group -->
+    <div id="pipette-group" class="absolute bottom-[15%] left-[30%] z-10 group-pipette transition-opacity duration-300">
+      <!-- Added Labels for clarity as requested -->
+      <div
+        class="absolute -top-8 left-1/2 -translate-x-1/2 bg-black/60 text-white text-xs px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        Pipette 10ml</div>
+      <img id="empty-pippete" src="assets/pippete.png" alt="Pipette" class="h-[30vh] hover-item"
+        data-label="Pipette (10ml)" />
+      <img id="pipette-milk" src="assets/pippete-solution50ml-grey.png" alt="Pipette Milk"
+        class="h-[21.5vh] w-[0.73vw] absolute bottom-0 left-[40%]" />
+    </div>
+
+    <!-- Phenolphthalein Group -->
+    <div id="phenol-group" class="group-phenol transition-opacity duration-300">
+      <img id="phenolphthelen-bottle" src="assets/phenolphthelein-bottle.png" alt="Phenolphthalein Bottle"
+        class="absolute bottom-[15%] left-[53%] h-[25vh] z-10 hover-item" data-label="Phenolphthalein Bottle" />
+      <img id="phenolphthelein-cap" src="assets/phenolphthelein-cap.png" alt="Phenolphthalein Cap"
+        class="absolute bottom-[21.5%] left-[54.55%] h-[25vh] z-10 hover-item cursor-pointer"
+        data-label="Phenolphthalein Cap" />
+      <img id="phenol-drop" src="assets/drop2.png" class="absolute h-[2vh] bottom-[40%] left-[37.8%] hidden hover-item"
+        data-label="Phenolphthalein Drop" />
+    </div>
+
+    <!-- Milk Beaker Group -->
+    <div id="milk-group" class="group-milk transition-opacity duration-300 absolute bottom-[15%] left-[62%] h-[24vh]">
+      <div class="relative h-full w-fit flex items-end justify-center">
+        <img id="milk-beaker-overlay" src="assets/milk_beaker_overlay.png" alt="Milk"
+          class="absolute bottom-[1%] w-[84%] h-[80%] z-0 object-fill pointer-events-none" />
+        <img id="milk-beaker" src="assets/milk_beaker.png" alt="Milk Beaker"
+          class="relative h-full w-auto z-10 hover-item" data-label="Milk Sample" />
+      </div>
+    </div>
+
+    <!-- Cylinder & NaOH Group -->
+    <div id="titration-tools-group" class="group-titration-tools transition-opacity duration-300">
+      <div id="cylinder-container" class="absolute bottom-[10%] left-0 w-full h-[30vh]">
+        <!-- Label for 50ml scale -->
+        <!-- <div
+          class="absolute -top-10 left-[75%] bg-black/60 text-white text-xs px-2 py-0.5 rounded z-20 pointer-events-none">
+          50mL</div> -->
+        <img id="cylinder" src="assets/measuring cylinder 50ml.png" alt="Measuring Cylinder"
+          class="absolute left-[75%] bottom-[20%] h-full z-10 hover-item cursor-pointer"
+          data-label="Measuring Cylinder (50mL)" />
+        <img id="naoh-liquid" src="assets/measuring-cylinder-solution.png" />
+        <div id="naoh-stream"></div>
+      </div>
+      <div id="naoh" class="absolute bottom-[15%] left-[84%] h-[30vh] z-10 hover-item cursor-pointer group-naoh"
+        data-label="NaOH Solution (0.1N)">
+        <img src="assets/volumetric flask - 250ml.png" alt="Volumetric Flask 250ml"
+          class="h-full w-auto z-20 pointer-events-none relative" />
+        <img id="naoh-solution" src="assets/volumetric flask-sol-blue.png" alt="NaOH Solution"
+          class="absolute bottom-0 left-0 w-full h-auto pointer-events-none transition-opacity duration-300 z-10" />
+      </div>
+    </div>
+
+    <!-- Live Titration Table (Page 3) -->
+    <div id="titration-table-container"
+      class="hidden absolute top-[25%] left-1/2 -translate-x-1/2 bg-white/90 p-4 rounded shadow-lg z-40 max-w-sm">
+      <h4 class="font-bold border-b border-black mb-2">Titration Status</h4>
+      <table class="w-full text-sm">
+        <tr>
+          <td class="pr-4 py-1">Vol of NaOH used (mL):</td>
+          <td id="live-titration-val" class="font-mono font-bold text-blue-700">0.0</td>
+        </tr>
+      </table>
+    </div>
+
+  </div> <!-- End Simulation Area -->
+
+  <div id="next-container" class="fixed bottom-10 right-10 z-50">
+    <button id="btn-start"
+      class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
+      START
+    </button>
+    <button id="btn-next"
+      class="hidden bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
+      NEXT
+    </button>
+  </div>
+
+  <!-- Observation Table (Page 4) -->
+  <div id="observation-screen" class="hidden fixed inset-0 z-[60] bg-slate-100 flex items-center justify-center">
+    <div class="bg-white text-slate-900 rounded-2xl shadow-2xl w-[90%] max-w-4xl p-8 border border-slate-200">
+      <h2 class="text-2xl font-bold mb-6 text-center text-indigo-700">Observation Table</h2>
+
+      <div class="w-full overflow-x-auto mb-6">
+        <table class="w-full text-left border-collapse">
+          <thead class="bg-indigo-100 text-indigo-900">
+            <tr>
+              <th class="p-3 border border-indigo-200">Sample</th>
+              <th class="p-3 border border-indigo-200">Weight of sample (g)<br>(W)</th>
+              <th class="p-3 border border-indigo-200">Normality of NaOH<br>(N)</th>
+              <th class="p-3 border border-indigo-200">Volume of NaOH used (ml)<br>(V)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-3 border border-indigo-200 font-semibold">Milk</td>
+              <td class="p-3 border border-indigo-200" id="obs-w">10</td>
+              <td class="p-3 border border-indigo-200" id="obs-n">0.1</td>
+              <td class="p-3 border border-indigo-200 font-bold text-blue-600" id="obs-v">16</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="font-bold text-lg mb-4">Calculation</h3>
+        <p class="mb-2">Titratable acidity (%,lactic acid) = (9 × V × N) / W</p>
+        <p class="text-sm text-gray-600 mb-4">Where, V = Volume of NaOH used; N = Normality of NaOH solution; W = Weight
+          of milk</p>
+
+        <div class="flex items-center gap-4 mt-6">
+          <label class="font-semibold text-gray-700">Titratable acidity (%, lactic acid) = </label>
+          <input type="number" id="input-answer"
+            class="border border-gray-300 rounded px-3 py-2 w-32 focus:ring-2 focus:ring-indigo-500 outline-none"
+            placeholder="0.000" step="0.001">
+          <button id="btn-check-answer"
+            class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Check</button>
+        </div>
+
+        <div id="feedback-msg" class="mt-4 font-bold text-lg h-8"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="hover-tooltip"
+    class="hidden absolute bg-black/80 text-white px-2 py-1 rounded text-sm pointer-events-none z-[9999]"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
