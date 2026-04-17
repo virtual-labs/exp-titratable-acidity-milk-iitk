@@ -137,7 +137,7 @@
 
 @keyframes drainCylinder {
   0% {
-    clip-path: inset(0% 0 0 0);
+    clip-path: inset(9% 0 0 0);
   }
 
   100% {
@@ -220,44 +220,7 @@
   }
 }
 
-#naoh-stream {
-  position: absolute;
-  top: 10%;
-  /* Move higher up to the rim */
-  left: 73.8%;
-  /* Align with the mouth when tilted */
-  width: 4px;
-  height: 0;
-  background: rgba(79, 172, 254, 0.8);
-  box-shadow: 0 0 4px rgba(0, 242, 254, 0.6);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 5;
-  transition: height 0.5s ease-in-out, opacity 0.2s;
-  transform-origin: top center;
-}
 
-#naoh-stream.pouring {
-  opacity: 1;
-  height: 350px;
-  animation: counterTilt 1s forwards;
-  /* Counter-tilt to stay vertical */
-}
-
-@keyframes counterTilt {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(20deg);
-  }
-
-  /* Counter 20deg tilt */
-  100% {
-    transform: rotate(20deg);
-  }
-}
 
 #cylinder-container.tilt {
   animation: tiltcylinder 1s forwards;
@@ -269,7 +232,7 @@
   }
 
   50% {
-    transform: translate(var(--x), var(--y)) rotate(-20deg);
+    transform: translate(var(--x), var(--y)) rotate(-10deg);
   }
 
   100% {
