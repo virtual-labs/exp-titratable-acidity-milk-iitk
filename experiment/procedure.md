@@ -13,3 +13,4 @@ Procedure <br>
 4.	Note down the amount of titrant used to reach end point <br>
 5.	Calculate using formula: <br>
 Titratable acidity (%,lactic acid)=(0.9×V×N)/W
+<image src="images\image_2.png"><br>
