@@ -12,5 +12,5 @@ Procedure <br>
 3.	Fill the burette with 0.1 N standard NaOH solution and titrate sample till the appearance of pink colour. <br>
 4.	Note down the amount of titrant used to reach end point <br>
 5.	Calculate using formula: <br>
-Titratable acidity (%,lactic acid)=(0.9×V×N)/W
+
 <image src="images\image_2.png"><br>
