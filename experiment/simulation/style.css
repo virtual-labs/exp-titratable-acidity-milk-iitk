@@ -232,11 +232,11 @@
   }
 
   50% {
-    transform: translate(var(--x), var(--y)) rotate(-10deg);
+    transform: translate(var(--x), var(--y)) rotate(-90deg);
   }
 
   100% {
-    transform: translate(var(--x), var(--y)) rotate(-20deg);
+    transform: translate(var(--x), var(--y)) rotate(-90deg);
   }
 }
 
