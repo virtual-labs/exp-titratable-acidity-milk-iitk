@@ -1,0 +1,21 @@
+
+/home/runner/work/exp-titratable-acidity-milk-iitk/exp-titratable-acidity-milk-iitk/experiment/script.js
+  13:7  warning  'btnNextWrapper' is assigned a value but never used       no-unused-vars
+  18:7  warning  'groupBurette' is assigned a value but never used         no-unused-vars
+  19:7  warning  'groupFlask' is assigned a value but never used           no-unused-vars
+  20:7  warning  'groupPipette' is assigned a value but never used         no-unused-vars
+  21:7  warning  'groupPhenol' is assigned a value but never used          no-unused-vars
+  22:7  warning  'groupMilk' is assigned a value but never used            no-unused-vars
+  23:7  warning  'groupTitrationTools' is assigned a value but never used  no-unused-vars
+
+/home/runner/work/exp-titratable-acidity-milk-iitk/exp-titratable-acidity-milk-iitk/experiment/simulation/script.js
+  13:7  warning  'btnNextWrapper' is assigned a value but never used       no-unused-vars
+  18:7  warning  'groupBurette' is assigned a value but never used         no-unused-vars
+  19:7  warning  'groupFlask' is assigned a value but never used           no-unused-vars
+  20:7  warning  'groupPipette' is assigned a value but never used         no-unused-vars
+  21:7  warning  'groupPhenol' is assigned a value but never used          no-unused-vars
+  22:7  warning  'groupMilk' is assigned a value but never used            no-unused-vars
+  23:7  warning  'groupTitrationTools' is assigned a value but never used  no-unused-vars
+
+✖ 14 problems (0 errors, 14 warnings)
+

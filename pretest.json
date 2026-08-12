@@ -1,0 +1,90 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1.What does the titratable acidity of milk primarily indicate?",
+      "answers": {
+        "a": "Fat content",
+        "b": "Water content",
+        "c": "Microbial quality and freshness",
+        "d": "Protein concentration"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2.Which of the following is used as an indicator in titratable acidity determination?",
+      "answers": {
+        "a": "Methyl orange",
+        "b": "Bromothymol blue",
+        "c": "Phenolphthalein",
+        "d": "Litmus"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3.What is the standard alkali used in this titration method?",
+      "answers": {
+        "a": "0.1 N HCl",
+        "b": "0.1 N NaOH",
+        "c": "1 N NaCl",
+        "d": "0.1 N NH₄OH"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4.At what approximate pH does the phenolphthalein indicator show a visible color change?",
+      "answers": {
+        "a": "4.5",
+        "b": "6.0",
+        "c": "7.0",
+        "d": "8.3"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "5.Which component of milk contributes to its buffering capacity?",
+      "answers": {
+        "a": "Water",
+        "b": "Glucose",
+        "c": "Proteins and phosphates",
+        "d": "Fatty acids"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+  ]
+}
